@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeeSuite — Executive Summary 2025–2026</title>
+<style>
+  :root {
+    --yellow: #FFCF01;
+    --yellow-light: #FFF8DC;
+    --yellow-mid: #FFE566;
+    --black: #1A1A1A;
+    --dark: #141414;
+    --grey-bg: #F7F7F7;
+    --grey-card: #F2F2F2;
+    --grey-line: #E4E4E4;
+    --muted: #888888;
+    --text: #2C2C2C;
+    --green: #1DB954;
+    --red: #E84040;
+    --blue: #2E6FE0;
+    --radius: 10px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.07);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #F5F5F5;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--dark);
+    padding: 52px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--yellow);
+  }
+  .header-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--yellow);
+    letter-spacing: -1px;
+    line-height: 1.05;
+  }
+  .header h1 span { color: #fff; }
+  .header-sub {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #999;
+    font-weight: 400;
+  }
+  .header-tagline {
+    margin-top: 20px;
+    display: inline-block;
+    background: #222;
+    border-left: 3px solid var(--yellow);
+    padding: 8px 18px;
+    font-size: 13px;
+    color: var(--yellow);
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+  .header-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .header-chip {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--grey-line);
+    background: #FAFAFA;
+  }
+  .section-num {
+    width: 32px; height: 32px;
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: 0.3px;
+  }
+  .section-body {
+    padding: 24px 28px;
+  }
+
+  /* ── TEXT ── */
+  p { margin-bottom: 0; color: var(--text); }
+  .lead { font-size: 15.5px; line-height: 1.75; color: #333; }
+  .highlight {
+    background: var(--yellow-light);
+    border-left: 3px solid var(--yellow);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 14px;
+    color: #444;
+  }
+  strong { color: var(--black); }
+
+  /* ── 3-COLUMN GRID ── */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 6px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 6px;
+  }
+  .card {
+    background: var(--grey-card);
+    border-radius: 8px;
+    padding: 18px 16px;
+  }
+  .card-accent {
+    border-top: 3px solid var(--yellow);
+  }
+  .card-green { border-top: 3px solid var(--green); }
+  .card-red { border-top: 3px solid var(--red); }
+  .card-blue { border-top: 3px solid var(--blue); }
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card-value {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--black);
+    line-height: 1.2;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+    line-height: 1.55;
+  }
+
+  /* ── TABLE ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+  thead th {
+    background: var(--dark);
+    color: var(--yellow);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  thead th:first-child { border-radius: 6px 0 0 0; }
+  thead th:last-child  { border-radius: 0 6px 0 0; }
+  tbody tr:nth-child(even) { background: var(--grey-bg); }
+  tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--grey-line);
+    color: var(--text);
+    vertical-align: top;
+  }
+  .kpi-target {
+    font-weight: 800;
+    color: var(--black);
+  }
+
+  /* ── FUNNEL ── */
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .funnel-stage {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-radius: 7px;
+    padding: 12px 18px;
+    background: #F8F8F8;
+    border-left: 4px solid var(--yellow);
+    transition: background 0.2s;
+  }
+  .funnel-stage:hover { background: var(--yellow-light); }
+  .funnel-name {
+    font-weight: 800;
+    font-size: 14px;
+    min-width: 130px;
+    color: var(--black);
+  }
+  .funnel-arrow {
+    color: var(--yellow);
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .funnel-desc { font-size: 13px; color: #555; flex: 1; }
+  .funnel-kpi {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--black);
+    border-radius: 12px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  /* ── 3 PILLARS ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 10px;
+  }
+  .pillar {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .pillar-top {
+    background: var(--dark);
+    padding: 20px 18px 14px;
+  }
+  .pillar-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .pillar-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    margin-top: 6px;
+  }
+  .pillar-body {
+    background: var(--grey-card);
+    padding: 16px 18px;
+  }
+  .pillar-body p { font-size: 13.5px; color: #555; line-height: 1.65; }
+  .pillar-items {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pillar-item {
+    font-size: 12.5px;
+    color: var(--black);
+    background: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    border-left: 2px solid var(--yellow);
+  }
+
+  /* ── BUDGET ROW ── */
+  .budget-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--grey-line);
+  }
+  .budget-label { min-width: 180px; font-size: 13.5px; color: var(--text); }
+  .budget-bar-wrap { flex: 1; height: 10px; background: #EBEBEB; border-radius: 5px; overflow: hidden; }
+  .budget-bar { height: 100%; border-radius: 5px; background: var(--yellow); }
+  .budget-pct { min-width: 38px; font-size: 13px; font-weight: 700; color: var(--black); text-align: right; }
+  .budget-val { min-width: 60px; font-size: 12px; color: var(--muted); text-align: right; }
+
+  /* ── RISK CARDS ── */
+  .risk-card {
+    border-radius: 8px;
+    padding: 18px 18px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+    background: var(--grey-card);
+  }
+  .risk-badge {
+    min-width: 64px; height: 24px;
+    border-radius: 12px;
+    font-size: 10px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+  .risk-high  { background: #FDECEA; color: #C0392B; }
+  .risk-crit  { background: #C0392B; color: #fff; }
+  .risk-med   { background: #FFF3CD; color: #856404; }
+  .risk-content { flex: 1; }
+  .risk-title { font-weight: 800; font-size: 14px; color: var(--black); margin-bottom: 4px; }
+  .risk-desc  { font-size: 13px; color: #555; }
+  .risk-action { margin-top: 8px; font-size: 13px; color: var(--blue); }
+  .risk-action strong { color: var(--blue); }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .tl-card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .tl-header {
+    background: var(--dark);
+    padding: 12px 14px;
+  }
+  .tl-q { font-size: 26px; font-weight: 900; color: var(--yellow); line-height: 1; }
+  .tl-theme { font-size: 11px; font-weight: 700; color: #aaa; margin-top: 2px; letter-spacing: 1px; text-transform: uppercase; }
+  .tl-body {
+    background: #F2F2F2;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #555;
+  }
+  .tl-body li {
+    padding: 3px 0;
+    border-bottom: 1px solid #E8E8E8;
+    list-style: none;
+  }
+  .tl-body li::before { content: "→ "; color: var(--yellow); font-weight: 700; }
+  .tl-body li:last-child { border-bottom: none; }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    background: var(--dark);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: var(--yellow);
+  }
+  .cta-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .cta-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.6;
+  }
+  .cta-text em { color: var(--yellow); font-style: normal; }
+
+  /* ── BADGE CHIPS ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 3px 10px;
+    margin: 3px 4px 3px 0;
+    letter-spacing: 0.3px;
+  }
+  .badge-yellow { background: var(--yellow); color: var(--black); }
+  .badge-dark   { background: #2C2C2C; color: #ccc; }
+  .badge-green  { background: #E8F5E9; color: #2E7D32; }
+  .badge-red    { background: #FDECEA; color: #C62828; }
+
+  /* ── SCENARIO TABLE ── */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .sc-card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .sc-header {
+    padding: 12px 16px;
+    font-weight: 800;
+    font-size: 13px;
+  }
+  .sc-header.pess { background: #FDECEA; color: #C62828; }
+  .sc-header.base { background: var(--yellow); color: var(--black); }
+  .sc-header.opt  { background: #E8F5E9; color: #2E7D32; }
+  .sc-body {
+    background: #F8F8F8;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #555;
+  }
+  .sc-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #EEE; }
+  .sc-row:last-child { border: none; }
+  .sc-row strong { color: var(--black); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .header { padding: 36px 24px 30px; }
+    .header h1 { font-size: 32px; }
+    .grid-3, .pillars, .timeline, .scenario-grid { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .section-body { padding: 18px; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; }
+    .section { box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">Executive Summary · Marketing Plan 2025–2026</div>
+  <h1>BEE<span>SUITE</span></h1>
+  <div class="header-sub">SaaS B2B Marketing Plan — Công ty CP Besco · Sao Khuê 2025</div>
+  <div class="header-tagline">"Vận hành vững — Tăng trưởng mạnh"</div>
+  <div class="header-meta">
+    <span class="header-chip">📅 Kỳ thực hiện: 2025 – 2026</span>
+    <span class="header-chip">💰 Ngân sách: 120M VND/năm</span>
+    <span class="header-chip">🎯 Thị trường: Việt Nam · B2B</span>
+    <span class="header-chip">⭐ Sao Khuê 2025</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── SECTION 1: THỊ TRƯỜNG ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">BỨC TRANH THỊ TRƯỜNG</div>
+    </div>
+    <div class="section-body">
+      <p class="lead">
+        Thị trường SaaS/ERP tại Việt Nam đang tăng trưởng với CAGR ~16,7%, từ 211 triệu USD (2025) lên 849 triệu USD (2034). Cơ hội lớn nhất nằm ở phân khúc doanh nghiệp vừa và lớn (50–500 nhân sự) đang số hóa vận hành — nhóm này chiếm SAM ước tính 90–130 triệu USD/năm và chưa được phục vụ tốt bởi cả enterprise ERP lẫn phần mềm SME đơn giản.
+      </p>
+      <div class="highlight">
+        ⚠️ <strong>Rủi ro cần lưu ý:</strong> 85% SME vẫn dùng Excel — độ nhạy cảm về ngân sách cao, chu kỳ ra quyết định dài. A1 Consulting (đối tác Odoo chiến lược) đang cạnh tranh trực tiếp ở phân khúc tư vấn giải pháp, không chỉ bán phần mềm. Quy định PDPD và Luật An ninh mạng tăng yêu cầu compliance — đây vừa là rào cản vừa là lợi thế nếu BeeSuite chủ động trước.
+      </div>
+
+      <div class="grid-3" style="margin-top:18px">
+        <div class="card card-accent">
+          <div class="card-label">SAM mục tiêu</div>
+          <div class="card-value">$90–130M</div>
+          <div class="card-desc">Phân khúc DN vừa-lớn phù hợp BeeSuite tại Việt Nam</div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-label">Tăng trưởng thị trường</div>
+          <div class="card-value">CAGR 16,7%</div>
+          <div class="card-desc">SaaS Việt Nam 2025–2034, mạnh nhất ở CRM, vận hành và automation</div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-label">SOM khả thi (3–5 năm)</div>
+          <div class="card-value">$1,5–4M/năm</div>
+          <div class="card-desc">Tương đương 38–100 tỷ VND doanh thu hàng năm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: KHÁCH HÀNG ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">KHÁCH HÀNG MỤC TIÊU</div>
+    </div>
+    <div class="section-body">
+      <p class="lead">
+        BeeSuite nhắm vào <strong>doanh nghiệp vừa và lớn (50–500 nhân sự)</strong> trong 3 ngành trọng điểm: Sản xuất vừa, Bán lẻ đa kênh, và Phân phối. Người ra quyết định thực tế là <strong>Buying Committee 4 vai trò</strong>: CEO/Chủ DN (muốn kiểm soát toàn cục), CFO/Kế toán trưởng (muốn dữ liệu tài chính liền mạch), GĐ Sản xuất/Vận hành (muốn visibility kho và supply chain), và IT Lead (muốn tích hợp sạch, bảo mật).
+      </p>
+      <div class="highlight">
+        💡 <strong>Insight cốt lõi:</strong> Khách hàng không mua phần mềm — họ mua <em>khả năng kiểm soát doanh nghiệp khi mở rộng</em>. Pain point thực tế là dữ liệu rời rạc giữa các phòng ban, không phải thiếu tính năng. Trigger mua hàng thường đến từ một sự kiện cụ thể: giao hàng trễ liên tục, quyết toán sai, investor yêu cầu báo cáo, hoặc hệ thống cũ hết vòng đời.
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="card">
+          <div class="card-label">Persona 1</div>
+          <div style="font-weight:800;color:var(--black);font-size:15px;">Trần Minh Khoa — COO</div>
+          <div class="card-desc">Công ty sản xuất ~700 nhân sự, Bình Dương. Trigger: dữ liệu giữa các phòng ban không khớp, cần mở rộng mà giữ được kiểm soát. Sợ nhất: dự án ERP kéo dài, dữ liệu bẩn.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Persona 2</div>
+          <div style="font-weight:800;color:var(--black);font-size:15px;">Nguyễn Thảo Vy — GĐ Omnichannel</div>
+          <div class="card-desc">Thương hiệu bán lẻ 120 cửa hàng + online, TP.HCM. Trigger: tồn kho lệch, đơn hàng online/offline chồng chéo. Cần dashboard realtime và đồng bộ xuyên kênh ngay.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: ĐỊNH VỊ & BIG IDEA ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">ĐỊNH VỊ & BIG IDEA</div>
+    </div>
+    <div class="section-body">
+      <p class="lead">
+        BeeSuite chiếm lĩnh vị trí <strong>"ERP cho doanh nghiệp đang mở rộng nhanh nhưng cần kiểm soát"</strong> — khoảng trống mà SAP/Dynamics quá cồng kềnh và cloud ERP đại trà quá nông đều không phủ được. Không ai đang nói nhất quán lời hứa này: <em>tăng trưởng có trật tự, không mất kiểm soát dữ liệu.</em>
+      </p>
+
+      <!-- Big Idea Statement box -->
+      <div style="background:var(--dark);border-radius:10px;padding:22px 24px;margin:16px 0;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--yellow);text-transform:uppercase;margin-bottom:8px;">Big Idea Statement</div>
+        <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.45;margin-bottom:10px;">"Doanh nghiệp tăng trưởng không phải vì may mắn — mà vì vận hành như máy."</div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;">
+          <div>
+            <div style="font-size:10px;color:#666;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Tagline</div>
+            <div style="font-size:16px;font-weight:900;color:var(--yellow);">"Vận hành vững — Tăng trưởng mạnh"</div>
+          </div>
+          <div>
+            <div style="font-size:10px;color:#666;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">English version</div>
+            <div style="font-size:14px;font-weight:700;color:#aaa;font-style:italic;">"Built to Run. Built to Grow."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        🎯 <strong>Tại sao Big Idea này hoạt động:</strong> Người mua ERP không hỏi "phần mềm có nhiều tính năng không?" — họ hỏi <em>"nếu tôi chọn cái này, doanh nghiệp có chạy tốt hơn không?"</em> Tagline "Vận hành vững — Tăng trưởng mạnh" trả lời đúng câu hỏi đó bằng ngôn ngữ của COO, không phải IT Manager. Bravo nói "toàn diện", A1 nói "tư vấn bài bản", Cloudify nói "dễ dùng" — BeeSuite là thương hiệu duy nhất nói về <strong>tăng trưởng có kiểm soát</strong>.
+      </div>
+
+      <!-- How Big Idea shows up per channel -->
+      <div style="margin-top:18px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Cách Big Idea thể hiện theo kênh</div>
+        <table>
+          <thead><tr><th>Kênh</th><th>Cách thể hiện</th></tr></thead>
+          <tbody>
+            <tr><td><strong>LinkedIn</strong></td><td>Thought leadership: "Dấu hiệu vận hành doanh nghiệp đang không theo kịp tăng trưởng"</td></tr>
+            <tr><td><strong>Webinar</strong></td><td>"Vận hành vững — Tăng trưởng mạnh: Bài học từ [tên KH]" — từ vận hành rời rạc đến tăng trưởng có kiểm soát</td></tr>
+            <tr><td><strong>Google Ads</strong></td><td>"ERP cho doanh nghiệp đang mở rộng — triển khai theo giai đoạn, kết quả trong 6 tuần"</td></tr>
+            <tr><td><strong>Email outbound</strong></td><td>Tiêu đề: "Doanh nghiệp bạn đang lớn nhanh hơn hệ thống của bạn?"</td></tr>
+            <tr><td><strong>Sales Deck</strong></td><td>Mở đầu bằng pain point → BeeSuite = cỗ máy vận hành → Case study KPI cụ thể</td></tr>
+            <tr><td><strong>PR / Báo chí</strong></td><td>"BeeSuite: Nền tảng ERP giúp doanh nghiệp Việt vận hành như máy khi mở rộng quy mô"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-3" style="margin-top: 18px;">
+        <div class="card card-accent">
+          <div class="card-label">Khác biệt cạnh tranh 1</div>
+          <div style="font-size:13.5px;color:#333;font-weight:700;margin-bottom:4px;">Kiểm soát khi mở rộng</div>
+          <div class="card-desc">Tăng trưởng có trật tự — dữ liệu hợp nhất, quy trình đồng bộ, lãnh đạo nhìn thấy toàn cảnh realtime</div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-label">Khác biệt cạnh tranh 2</div>
+          <div style="font-size:13.5px;color:#333;font-weight:700;margin-bottom:4px;">Omnichannel Depth</div>
+          <div class="card-desc">Đồng bộ thực sự giữa các kênh bán và vận hành — không đối thủ nội địa nào đang kể câu chuyện này rõ</div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-label">Khác biệt cạnh tranh 3</div>
+          <div style="font-size:13.5px;color:#333;font-weight:700;margin-bottom:4px;">Triển khai ít ma sát</div>
+          <div class="card-desc">Nhanh hơn ERP quốc tế, sâu hơn cloud ERP đại trà — + AI Assistant tích hợp sẵn, 10+ năm kinh nghiệm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3b: PHÂN TÍCH ĐỐI THỦ ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--dark);color:var(--yellow);">3B</div>
+      <div class="section-title">PHÂN TÍCH ĐỐI THỦ CẠNH TRANH</div>
+    </div>
+    <div class="section-body">
+      <p class="lead" style="margin-bottom:16px;">
+        Thị trường ERP Việt Nam cạnh tranh ở 3 lớp: ERP quốc tế (SAP, Dynamics), ERP nội địa (Bravo, Fast), và đơn vị tư vấn triển khai (A1 Consulting). BeeSuite cạnh tranh trực tiếp nhất với <strong>Bravo, A1 Consulting và Cloudify</strong>.
+      </p>
+
+      <!-- Competitive positioning map visual -->
+      <div style="background:var(--grey-card);border-radius:10px;padding:20px;margin-bottom:18px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Bản đồ định vị cạnh tranh (Giá × Độ sâu giải pháp)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;">
+          <div style="background:#fff;border-radius:8px;padding:12px 8px;border:1px solid #E0E0E0;">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;">GIÁ THẤP · ĐỘ SÂU THẤP</div>
+            <div style="font-size:13px;font-weight:700;color:#666;">Fast · MISA · Base.vn</div>
+            <div style="font-size:11px;color:#999;margin-top:4px;">Đại trà, số hóa cơ bản</div>
+          </div>
+          <div style="background:#fff;border-radius:8px;padding:12px 8px;border:1px solid #E0E0E0;">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;">GIÁ TRUNG BÌNH · ĐỘ SÂU TRUNG BÌNH</div>
+            <div style="font-size:13px;font-weight:700;color:#555;">Cloudify · Odoo</div>
+            <div style="font-size:11px;color:#999;margin-top:4px;">Cloud ERP tiếp cận dễ</div>
+          </div>
+          <div style="background:#fff;border-radius:8px;padding:12px 8px;border:1px solid #E0E0E0;">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;">GIÁ CAO · ĐỘ SÂU CAO</div>
+            <div style="font-size:13px;font-weight:700;color:#333;">SAP B1 · Dynamics 365</div>
+            <div style="font-size:11px;color:#999;margin-top:4px;">Chuẩn quốc tế, cồng kềnh</div>
+          </div>
+        </div>
+        <div style="background:var(--yellow);border-radius:8px;padding:12px 16px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-size:11px;font-weight:800;color:var(--black);letter-spacing:1px;">🎯 BEESUITE + BRAVO</div>
+            <div style="font-size:12px;color:var(--black);margin-top:2px;">Giá trung bình · Độ sâu cao · Phù hợp DN Việt</div>
+          </div>
+          <div style="font-size:12px;color:var(--black);font-weight:700;text-align:right;">Cần tách biệt bằng<br>omnichannel depth<br>+ growth visibility</div>
+        </div>
+      </div>
+
+      <!-- 3 competitors table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Đối thủ</th>
+            <th>Định vị / Thông điệp</th>
+            <th>Điểm mạnh</th>
+            <th>Điểm yếu</th>
+            <th>Cơ hội cho BeeSuite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>⚠️ Bravo ERP</strong><br><span style="font-size:11px;color:var(--muted);">Đối thủ trực tiếp #1</span></td>
+            <td>ERP nội địa hàng đầu, quản trị tổng thể DN Việt</td>
+            <td>Thương hiệu lâu năm, SEO blog mạnh, case study dày, am hiểu quy trình Việt</td>
+            <td>Thiên về ERP truyền thống, thiếu sắc nét ở omnichannel và cloud linh hoạt</td>
+            <td>Định vị mạnh hơn ở omnichannel depth, growth visibility và cloud ERP linh hoạt</td>
+          </tr>
+          <tr>
+            <td><strong>⚠️ A1 Consulting</strong><br><span style="font-size:11px;color:var(--muted);">Đối thủ trực tiếp #2</span></td>
+            <td>Đối tác tư vấn & triển khai Cloud ERP hàng đầu</td>
+            <td>Năng lực tư vấn-triển khai mạnh, đối tác Oracle/Dynamics/Odoo, content chuyên sâu</td>
+            <td>Không có platform ERP lõi, phụ thuộc đối tác, khó tạo khác biệt sản phẩm bền vững</td>
+            <td>Định vị là thương hiệu có <strong>cả sản phẩm lẫn năng lực triển khai</strong> — không phải trung gian</td>
+          </tr>
+          <tr>
+            <td><strong>⚠️ Cloudify</strong><br><span style="font-size:11px;color:var(--muted);">Đối thủ trực tiếp #3</span></td>
+            <td>Cloud ERP dễ tiếp cận, hợp nhất đa bộ phận</td>
+            <td>Cloud-first, thông điệp đơn giản dễ hiểu, bám đúng xu hướng đa kênh</td>
+            <td>Thương hiệu nhỏ, ít case study chiều sâu, thiếu thought leadership, dễ bị ép giá</td>
+            <td>Cạnh tranh trực tiếp bằng sức nặng thương hiệu và chiều sâu giải pháp có chứng minh</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- White space -->
+      <div style="background:var(--dark);border-radius:10px;padding:20px 22px;margin-top:18px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:8px;">🔓 White Space — Vùng trống chưa ai chiếm</div>
+        <div style="font-size:15px;font-weight:700;color:#fff;line-height:1.55;">
+          Mid-market có độ phức tạp vận hành cao, cần giải pháp đủ sâu <em style="color:var(--yellow);">nhưng không muốn trả chi phí và sự cồng kềnh của ERP quốc tế.</em>
+        </div>
+        <div style="font-size:13px;color:#aaa;margin-top:10px;line-height:1.65;">
+          Bravo nói "toàn diện" · A1 nói "tư vấn bài bản" · Cloudify nói "dễ dùng". Chưa ai đang nói rõ và nhất quán với nhóm <strong style="color:#ddd;">doanh nghiệp vừa-lớn đang mở rộng nhanh, cần kiểm soát mà không muốn dự án ERP nặng nề</strong>. BeeSuite có đủ thành phần để lấp vùng trống này — vấn đề là chuyển lợi thế đó thành định vị đủ sắc nét.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 4: KPIs ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">MỤC TIÊU & KPIs TRỌNG TÂM</div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">
+        KPI framework điều chỉnh theo đặc thù SaaS: ưu tiên <strong>CAC · LTV · Churn · NRR</strong> thay vì chỉ đo leads và revenue.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Mục tiêu chiến lược</th>
+            <th>KPI chính</th>
+            <th>Con số mục tiêu</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tăng trưởng khách hàng mới</strong></td>
+            <td>Qualified MQL/tháng</td>
+            <td class="kpi-target">50–80 MQL/tháng (cuối năm)</td>
+            <td>Tăng dần: Q1 ≥10 → Q4 ≥50</td>
+          </tr>
+          <tr>
+            <td><strong>Chất lượng lead</strong></td>
+            <td>CPL (Cost Per Lead)</td>
+            <td class="kpi-target">< 200.000 VND/lead</td>
+            <td>Google Search Ads là nguồn chính</td>
+          </tr>
+          <tr>
+            <td><strong>Hiệu quả chuyển đổi phễu</strong></td>
+            <td>Demo Rate (MQL→Demo)</td>
+            <td class="kpi-target">15–20%</td>
+            <td>Cần LP & offer đủ mạnh trước khi đẩy traffic</td>
+          </tr>
+          <tr>
+            <td><strong>Hiệu quả kinh tế đơn vị</strong></td>
+            <td>CAC (Chi phí mỗi KH mới)</td>
+            <td class="kpi-target">< 15M VND/khách hàng</td>
+            <td>Bao gồm toàn bộ chi phí sales + marketing</td>
+          </tr>
+          <tr>
+            <td><strong>Giá trị vòng đời khách hàng</strong></td>
+            <td>LTV</td>
+            <td class="kpi-target">> 200M VND/khách hàng</td>
+            <td>ACV ~100M × 2–3 năm giữ chân trung bình</td>
+          </tr>
+          <tr>
+            <td><strong>Tỷ lệ LTV:CAC</strong></td>
+            <td>LTV:CAC Ratio</td>
+            <td class="kpi-target">> 10x</td>
+            <td>Ngưỡng tối thiểu để mô hình SaaS bền vững</td>
+          </tr>
+          <tr>
+            <td><strong>Giữ chân khách hàng</strong></td>
+            <td>Monthly Churn Rate</td>
+            <td class="kpi-target">< 5%/tháng</td>
+            <td>Tương đương giữ được >50% KH sau 12 tháng</td>
+          </tr>
+          <tr>
+            <td><strong>Mở rộng doanh thu</strong></td>
+            <td>Net Revenue Retention (NRR)</td>
+            <td class="kpi-target">> 110%</td>
+            <td>Bao gồm upsell module & expansion</td>
+          </tr>
+          <tr>
+            <td><strong>Thời gian hoàn vốn</strong></td>
+            <td>CAC Payback Period</td>
+            <td class="kpi-target">< 12 tháng</td>
+            <td>Mốc nhà đầu tư và ban lãnh đạo cần thấy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── SECTION 5: PHỄU & CHIẾN LƯỢC ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">CHIẾN LƯỢC THỰC THI — 3 TRỌNG TÂM</div>
+    </div>
+    <div class="section-body">
+
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+        Phễu marketing điều chỉnh theo mô hình SaaS B2B:
+        <span class="badge badge-yellow">Awareness</span>
+        <span class="badge badge-dark">→ Trial</span>
+        <span class="badge badge-dark">→ Activation</span>
+        <span class="badge badge-dark">→ Retention</span>
+        <span class="badge badge-green">→ Revenue</span>
+      </p>
+
+      <div class="funnel">
+        <div class="funnel-stage">
+          <div class="funnel-name">① AWARENESS</div>
+          <div class="funnel-desc">Google Search Ads + SEO + LinkedIn + Content. Mục tiêu: đưa đúng người đến đúng Landing Page.</div>
+          <div class="funnel-kpi">CPM < 50K · CPL < 200K</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-name">② TRIAL</div>
+          <div class="funnel-desc">Demo có tư vấn (sales-assisted) hoặc sandbox tự khám phá — tùy năng lực product team. ROI Calculator làm lead qualifier.</div>
+          <div class="funnel-kpi">Demo Rate 15–20%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-name">③ ACTIVATION</div>
+          <div class="funnel-desc">First Value Moment trong 7–14 ngày: KH tự tạo được báo cáo đầu tiên hoặc kết nối được module chính với dữ liệu thực.</div>
+          <div class="funnel-kpi">Activation Rate 40%+</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-name">④ RETENTION</div>
+          <div class="funnel-desc">In-app communication (Intercom/Crisp), email nurturing 90 ngày, CS check-in định kỳ, milestone celebration, inactivity alert.</div>
+          <div class="funnel-kpi">Churn < 5%/tháng</div>
+        </div>
+        <div class="funnel-stage" style="border-left-color: var(--green);">
+          <div class="funnel-name">⑤ REVENUE</div>
+          <div class="funnel-desc">Upsell module mới + Referral Program 3 tầng + Expansion vào đơn vị/phòng ban khác trong cùng doanh nghiệp.</div>
+          <div class="funnel-kpi" style="background:var(--green);">NRR > 110%</div>
+        </div>
+      </div>
+
+      <div class="pillars" style="margin-top: 24px;">
+        <!-- Pillar 1 -->
+        <div class="pillar">
+          <div class="pillar-top">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title">Performance Marketing là xương sống</div>
+          </div>
+          <div class="pillar-body">
+            <p>Google Search Ads là kênh chính — nhắm từ khóa có intent cao, loại bỏ negative keywords. Meta Ads chỉ dùng cho retargeting (không prospecting B2B). LinkedIn Ads cho brand + decision layer.</p>
+            <div class="pillar-items">
+              <div class="pillar-item">Google Search: 50M/năm (42% ngân sách)</div>
+              <div class="pillar-item">Meta Retargeting: 20M/năm — ROAS mục tiêu >3x</div>
+              <div class="pillar-item">LinkedIn Ads: 20M/năm — CPL < 500K</div>
+              <div class="pillar-item">A/B test LP + email liên tục, ≥95% significance</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar">
+          <div class="pillar-top">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title">Growth Hacking & Referral Program</div>
+          </div>
+          <div class="pillar-body">
+            <p>5 chiến thuật growth không tốn nhiều ngân sách nhưng tạo hiệu quả nếu làm đúng. Referral program 3 tầng chuyển KH hài lòng thành kênh acquisition.</p>
+            <div class="pillar-items">
+              <div class="pillar-item">ROI Calculator viral loop trên Landing Page</div>
+              <div class="pillar-item">LinkedIn Social Proof Engine (CEO KH share)</div>
+              <div class="pillar-item">Data-driven cold outreach 100 DN/tháng</div>
+              <div class="pillar-item">Referral Tier 1: 1–2 tháng free · Tier 2: 5–8% hoa hồng</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar">
+          <div class="pillar-top">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title">User Onboarding là Marketing</div>
+          </div>
+          <div class="pillar-body">
+            <p>Onboarding 90 ngày được coi như chiến dịch marketing: mỗi milestone là cơ hội tạo thêm giá trị, ngăn churn và tạo điều kiện upsell tự nhiên.</p>
+            <div class="pillar-items">
+              <div class="pillar-item">Pre-boarding: Welcome kit + setup checklist</div>
+              <div class="pillar-item">Tuần 1–2: Tooltip hướng dẫn, CS check-in</div>
+              <div class="pillar-item">Tuần 5–8: Báo cáo ROI đầu tiên gửi KH</div>
+              <div class="pillar-item">Tháng 3+: Upsell ask + NPS survey + referral</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: NGÂN SÁCH ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">NGÂN SÁCH & TIMELINE</div>
+    </div>
+    <div class="section-body">
+      <p class="lead" style="margin-bottom:20px;">
+        Tổng ngân sách <strong>120M VND/năm</strong> (~10M/tháng), kỳ thực hiện 12 tháng chia 4 giai đoạn. Mốc quan trọng nhất: <strong>Q1 phải hoàn thành Landing Page x2 + Email sequence trước khi đẩy bất kỳ ngân sách Ads nào lên Q2.</strong>
+      </p>
+
+      <div class="grid-2">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Phân bổ ngân sách</div>
+          <div class="budget-row">
+            <div class="budget-label">Google Search Ads</div>
+            <div class="budget-bar-wrap"><div class="budget-bar" style="width:42%"></div></div>
+            <div class="budget-pct">42%</div>
+            <div class="budget-val">50M</div>
+          </div>
+          <div class="budget-row">
+            <div class="budget-label">LinkedIn Ads</div>
+            <div class="budget-bar-wrap"><div class="budget-bar" style="width:17%;background:#0077B5"></div></div>
+            <div class="budget-pct">17%</div>
+            <div class="budget-val">20M</div>
+          </div>
+          <div class="budget-row">
+            <div class="budget-label">Meta Retargeting</div>
+            <div class="budget-bar-wrap"><div class="budget-bar" style="width:17%;background:#3B5998"></div></div>
+            <div class="budget-pct">17%</div>
+            <div class="budget-val">20M</div>
+          </div>
+          <div class="budget-row">
+            <div class="budget-label">Content & Design</div>
+            <div class="budget-bar-wrap"><div class="budget-bar" style="width:12%;background:#2DBD74"></div></div>
+            <div class="budget-pct">12%</div>
+            <div class="budget-val">14M</div>
+          </div>
+          <div class="budget-row">
+            <div class="budget-label">Tools & MarTech</div>
+            <div class="budget-bar-wrap"><div class="budget-bar" style="width:7%;background:#E89B4D"></div></div>
+            <div class="budget-pct">7%</div>
+            <div class="budget-val">8.4M</div>
+          </div>
+          <div class="budget-row">
+            <div class="budget-label">Events & Webinar</div>
+            <div class="budget-bar-wrap"><div class="budget-bar" style="width:5%;background:#9B59B6"></div></div>
+            <div class="budget-pct">5%</div>
+            <div class="budget-val">6M</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Dự báo ROI — 3 kịch bản</div>
+          <div class="scenario-grid" style="grid-template-columns:1fr;">
+            <div class="sc-card">
+              <div class="sc-header pess">📉 Pessimistic</div>
+              <div class="sc-body">
+                <div class="sc-row"><span>Leads/tháng</span><strong>20</strong></div>
+                <div class="sc-row"><span>Deals/năm</span><strong>4</strong></div>
+                <div class="sc-row"><span>Doanh thu</span><strong>400M VND</strong></div>
+              </div>
+            </div>
+            <div class="sc-card">
+              <div class="sc-header base">🎯 Base Case (kế hoạch)</div>
+              <div class="sc-body">
+                <div class="sc-row"><span>Leads/tháng</span><strong>50</strong></div>
+                <div class="sc-row"><span>Deals/năm</span><strong>12</strong></div>
+                <div class="sc-row"><span>Doanh thu</span><strong>1,2 tỷ VND</strong></div>
+              </div>
+            </div>
+            <div class="sc-card">
+              <div class="sc-header opt">🚀 Optimistic</div>
+              <div class="sc-body">
+                <div class="sc-row"><span>Leads/tháng</span><strong>80</strong></div>
+                <div class="sc-row"><span>Deals/năm</span><strong>20</strong></div>
+                <div class="sc-row"><span>Doanh thu</span><strong>2,0 tỷ VND</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top:22px;">
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-q">Q1</div>
+            <div class="tl-theme">Xây nền</div>
+          </div>
+          <div class="tl-body">
+            <ul>
+              <li>Landing Page x2 (theo ngành)</li>
+              <li>Email nurturing 6 bước</li>
+              <li>2 Case Study ngành</li>
+              <li>Google Ads test nhỏ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-q">Q2</div>
+            <div class="tl-theme">Kích hoạt</div>
+          </div>
+          <div class="tl-body">
+            <ul>
+              <li>Scale Google + LinkedIn Ads</li>
+              <li>ROI Calculator launch</li>
+              <li>Webinar #1 với VCCI</li>
+              <li>Cold outreach 100 DN/tháng</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-q">Q3</div>
+            <div class="tl-theme">Tối ưu phễu</div>
+          </div>
+          <div class="tl-body">
+            <ul>
+              <li>A/B test LP & email</li>
+              <li>Referral program ra mắt</li>
+              <li>5 Case Study mới</li>
+              <li>Meta remarketing campaign</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-q">Q4</div>
+            <div class="tl-theme">Scale</div>
+          </div>
+          <div class="tl-body">
+            <ul>
+              <li>Nhân rộng kênh hiệu quả</li>
+              <li>Webinar #2: ROI của ERP</li>
+              <li>Partner program mở rộng</li>
+              <li>Review & plan 2027</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6b: CONTENT PILLARS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--dark);color:var(--yellow);">6B</div>
+      <div class="section-title">CONTENT PILLARS — 4 TRỤ CỘT NỘI DUNG</div>
+    </div>
+    <div class="section-body">
+      <p style="font-size:14px;color:#555;margin-bottom:18px;">
+        Toàn bộ content strategy xây quanh tagline <strong>"Vận hành vững — Tăng trưởng mạnh"</strong> với 4 trụ cột nhất quán. Tỷ lệ vàng: <strong>65% content không đề cập BeeSuite trực tiếp</strong> — xây trust trước khi pitch. Kênh ưu tiên số 1: <strong>LinkedIn Organic</strong> bằng personal profile CEO/Founder (reach cao hơn trang công ty 3–5×).
+      </p>
+
+      <div class="pillars">
+        <!-- P1 -->
+        <div class="pillar">
+          <div class="pillar-top">
+            <div class="pillar-num" style="color:#FFCF01;">P1</div>
+            <div class="pillar-title">Vận hành Thật</div>
+            <div style="font-size:11px;color:#aaa;margin-top:4px;">Awareness · 30% content</div>
+          </div>
+          <div class="pillar-body">
+            <p>Phản chiếu đúng nỗi đau thật của DN Việt vận hành phức tạp — không quảng cáo, không giải pháp, chỉ nói về vấn đề. Mục tiêu: <em>BeeSuite hiểu ngành sâu hơn bất kỳ vendor nào.</em></p>
+            <div class="pillar-items">
+              <div class="pillar-item">"Tại sao 3 bộ phận có 3 con số tồn kho khác nhau?"</div>
+              <div class="pillar-item">"Cái giá ẩn của Excel khi công ty 200+ nhân sự"</div>
+              <div class="pillar-item">"CEO sản xuất mất bao nhiêu giờ/tuần vì dữ liệu rời rạc?"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P2 -->
+        <div class="pillar">
+          <div class="pillar-top" style="background:#1C2A3A;">
+            <div class="pillar-num" style="color:#4A90E2;">P2</div>
+            <div class="pillar-title">Vận hành Đúng</div>
+            <div style="font-size:11px;color:#aaa;margin-top:4px;">Consideration · 35% content</div>
+          </div>
+          <div class="pillar-body">
+            <p>Hướng dẫn, giải thích — cách vận hành tốt hơn, chọn giải pháp đúng, tránh sai lầm. BeeSuite = chuyên gia tư vấn đáng tin, không phải người bán hàng.</p>
+            <div class="pillar-items">
+              <div class="pillar-item" style="border-color:#4A90E2;">"ERP vs phần mềm đơn lẻ: DN 150 người nên chọn gì?"</div>
+              <div class="pillar-item" style="border-color:#4A90E2;">"3 tiêu chí quan trọng nhất chọn ERP cho sản xuất"</div>
+              <div class="pillar-item" style="border-color:#4A90E2;">"Tại sao 70% dự án ERP thất bại — và cách BeeSuite giải quyết"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="pillar">
+          <div class="pillar-top" style="background:#1A2A1A;">
+            <div class="pillar-num" style="color:#2DBD74;">P3</div>
+            <div class="pillar-title">Vận hành như Máy</div>
+            <div style="font-size:11px;color:#aaa;margin-top:4px;">Conversion · 25% content</div>
+          </div>
+          <div class="pillar-body">
+            <p>Bằng chứng hữu hình — câu chuyện thật, số liệu thật, con người thật. Khách hàng cũ nói thay cho BeeSuite. Xóa hoài nghi cuối cùng của prospect.</p>
+            <div class="pillar-items">
+              <div class="pillar-item" style="border-color:#2DBD74;">"Việt Thương Music: 3 hệ thống rời rạc → 1 nền tảng, giảm 40% thời gian đối soát kho"</div>
+              <div class="pillar-item" style="border-color:#2DBD74;">"ROI sau 12 tháng: Tính toán thực tế từ KH ngành bán lẻ"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P4 -->
+        <div class="pillar" style="display:none"></div><!-- placeholder for grid alignment -->
+      </div>
+
+      <!-- P4 full width -->
+      <div style="background:#F8F4E3;border-radius:10px;padding:18px 20px;margin-top:14px;border-left:4px solid #E89B4D;">
+        <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+          <div style="min-width:60px;">
+            <div style="font-size:28px;font-weight:900;color:#E89B4D;line-height:1;">P4</div>
+            <div style="font-size:11px;color:#888;margin-top:2px;">10% content</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:800;font-size:14px;color:var(--black);margin-bottom:4px;">Tăng trưởng như Ý — <span style="font-weight:400;font-size:12px;color:#888;">Awareness + Retention</span></div>
+            <div style="font-size:13px;color:#555;">Nội dung tầm nhìn — xu hướng ngành, insight vĩ mô, bài học lãnh đạo từ DN Việt thành công. Mục tiêu: build brand authority, giữ chân KH cũ, tạo shareable content trong network CEO.</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="badge" style="background:#FFF3CD;color:#856404;">"DN Việt 2026: Mô hình vận hành nào đang thắng?"</span>
+              <span class="badge" style="background:#FFF3CD;color:#856404;">"10 chỉ số CEO sản xuất cần theo dõi hàng tuần"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Channel distribution -->
+      <div style="margin-top:20px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Phân bổ content theo kênh</div>
+        <table>
+          <thead><tr><th>Kênh</th><th>Vai trò phễu</th><th>Loại content chủ đạo</th><th>Tần suất</th></tr></thead>
+          <tbody>
+            <tr><td><strong>LinkedIn Organic</strong> ⭐</td><td>Awareness + Consideration</td><td>Insight ngắn 300–500 từ, pain point, CEO perspective, data viz</td><td>3–4 post/tuần</td></tr>
+            <tr><td><strong>Facebook Fanpage</strong></td><td>Awareness + Retargeting</td><td>Chia sẻ blog, event invite, behind-the-scenes, case study snippet. Paid: retargeting web visitors &amp; video viewers — không dùng cho prospecting B2B</td><td>2–3 post/tuần · Retarget paid liên tục Q2–Q4</td></tr>
+            <tr><td><strong>Blog / SEO Website</strong></td><td>Awareness + Consideration</td><td>Bài dài 1.500–2.500 từ, keyword-driven, pillar page + cluster</td><td>2–3 bài/tháng</td></tr>
+            <tr><td><strong>Email Marketing</strong></td><td>Consideration + Conversion + Retention</td><td>Drip sequence tự động 6 bước, newsletter tháng, post-event follow-up</td><td>Tự động + 1 lần/tháng</td></tr>
+            <tr><td><strong>YouTube</strong></td><td>Consideration</td><td>Demo video theo ngành, case study documentary, webinar recording</td><td>1–2 video/tháng</td></tr>
+            <tr><td><strong>Webinar / Event</strong></td><td>Consideration + Conversion</td><td>Workshop insight ngành, roundtable CEO, case study sharing</td><td>1 event/quý</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight" style="margin-top:14px;">
+        📌 <strong>Chỉ số đo hiệu quả content:</strong> <em>Content-Sourced Leads/tháng</em> — số qualified leads có nguồn gốc từ content (blog opt-in / LinkedIn click / webinar demo), đo qua UTM tracking + CRM. Kết nối trực tiếp với North Star Metric.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 7: RỦI RO ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">RỦI RO & KẾ HOẠCH DỰ PHÒNG</div>
+    </div>
+    <div class="section-body">
+      <div class="risk-card">
+        <div class="risk-badge risk-crit">CRITICAL</div>
+        <div class="risk-content">
+          <div class="risk-title">R1 — Giả định tài chính chưa được kiểm chứng</div>
+          <div class="risk-desc">ACV 100M VND và win rate 35% là ước tính ngược từ mục tiêu, chưa có data thực tế từ 3–5 deals gần nhất để xác nhận. Toàn bộ dự báo doanh thu và ROI đang dựa trên con số này.</div>
+          <div class="risk-action">→ <strong>Hành động ngay:</strong> Xác minh ACV và win rate thực từ lịch sử deals TRƯỚC khi trình plan với ban lãnh đạo và phân bổ ngân sách Q2.</div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <div class="risk-badge risk-high">HIGH</div>
+        <div class="risk-content">
+          <div class="risk-title">R2 — Q1 Overload Risk</div>
+          <div class="risk-desc">1 người marketing nội bộ không thể thực hiện 10+ deliverables trong Q1 mà không hy sinh chất lượng. Làm nhiều mà không tốt còn tệ hơn làm ít mà hoàn hảo.</div>
+          <div class="risk-action">→ <strong>Hành động ngay:</strong> Giới hạn Q1 chỉ còn <strong>TOP 3 deliverables</strong>: LP x2 + Email nurturing + 2 Case Study. Đẩy phần còn lại sang Q2 sau khi Q1 đã vững.</div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <div class="risk-badge risk-med">MEDIUM</div>
+        <div class="risk-content">
+          <div class="risk-title">R3 — Hạ tầng SaaS chưa sẵn sàng cho PLG</div>
+          <div class="risk-desc">Sandbox trial và in-app communication (Intercom) yêu cầu product team đầu tư hạ tầng. Hiện tại BeeSuite đang ở mô hình sales-assisted B2B, chưa hẳn là self-serve SaaS thuần.</div>
+          <div class="risk-action">→ <strong>Kế hoạch dự phòng:</strong> Nếu product team chưa sẵn sàng, giữ nguyên demo có tư vấn (white-glove onboarding) — không ép triển khai PLG khi hạ tầng chưa đủ.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-block">
+    <div class="cta-label">Call to Action</div>
+    <div class="cta-text">
+      Để kế hoạch này thành công, điều quan trọng nhất cần phê duyệt ngay là:
+      <br><br>
+      <em>(1) Xác minh ACV và win rate thực tế từ 3–5 deals gần nhất</em> — đây là con số nền tảng cho toàn bộ dự báo ROI và quyết định phân bổ ngân sách.
+      <br><br>
+      <em>(2) Phê duyệt danh sách Q1 rút gọn còn TOP 3 deliverables</em> và assign PIC cụ thể với deadline từng hạng mục — không bắt đầu chạy Ads cho đến khi LP + nurturing flow đã sẵn sàng.
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:28px;font-size:12px;color:#aaa;">
+    BeeSuite · Công ty CP Besco · beesuite.com · Sao Khuê 2025 · Tài liệu nội bộ — Executive Summary 2025–2026
+  </div>
+
+</div><!-- /container -->
+</body>
+</html>
